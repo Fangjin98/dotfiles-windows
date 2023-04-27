@@ -99,28 +99,21 @@ bars:
       right:  ["explorer_button","cpu", "memory"] 
 
 widgets:
-
-  battery:
-    type: "yasb.battery.BatteryWidget"
-    options:
-      time_remaining_natural: true
-
   clock:
     type: "yasb.clock.ClockWidget"
     options:
         label: "{%H:%M:%S %Z}"
-        label_alt: "{%d-%m-%y %H:%M:%S %Z}"
+        label_alt: "{%y-%m-%d %H:%M:%S %Z}"
         timezones: ["Asia/Shanghai", "America/Fort_Nelson", "America/New_York"]
         callbacks:
-          on_middle: "exec explorer.exe shell:Appsfolder\\Microsoft.WindowsAlarms_8wekyb3d8bbwe!App"
           on_right: "next_timezone"
 
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
-      label: "\uf200 {info[histograms][cpu_percent]}"
-      label_alt: "\uf200 CPU: {info[percent][total]}% | freq: {info[freq][current]:.2f} Mhz"
-      update_interval: 500
+      label: "\uf200 {info[cores][total]}"
+      label_alt: "\uf200 CPU: {info[percent][total]}%" 
+      update_interval: 5000
       histogram_icons:
         - '\u2581' # 0%
         - '\u2581' # 10%
@@ -168,9 +161,7 @@ widgets:
         floating: "><>"
         paused: "[P]"
       callbacks:
-        on_left: 'next_layout'
-        on_middle: 'toggle_monocle'
-        on_right: 'prev_layout'
+        on_left: 'toggle_pause'
 
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
@@ -178,9 +169,9 @@ widgets:
       label: "{win[title]}"
       label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
       label_no_window: ""
-      max_length: 48
+      max_length: 32
       max_length_ellipsis: "..."
-      monitor_exclusive: true
+      monitor_exclusive: false 
 
   # Custom widgets
 
