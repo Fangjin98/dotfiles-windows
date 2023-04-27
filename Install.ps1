@@ -1,6 +1,3 @@
-$global:BASE_DIR = git rev-parse --show-toplevel
-$global:CONFIG_DIR = $GIT_DIR+"/configs"
-
 Write-Host "Setting powershell to allow execution of scripts..."
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 

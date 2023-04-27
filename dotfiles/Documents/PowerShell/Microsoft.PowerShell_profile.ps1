@@ -32,6 +32,8 @@ if (-not (Get-Module PSReadline)) {
   }
 }
 
+$Env:KOMOREBI_CONFIG_HOME = '$HOME\.config\komorebi'
+
 Set-Alias -name ls -value lsd
 function ll {lsd -l}
 function la {lsd -l -a}
