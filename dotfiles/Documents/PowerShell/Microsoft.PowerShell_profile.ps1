@@ -115,6 +115,9 @@ function htop{
 function launchyasb{
   Start-Process -FilePath "D:\ProgramFiles\Miniconda\envs\yasb\python.exe" -ArgumentList ( 'D:\Joey\repos\yasb\src\main.py')  -WindowStyle Hidden
 }
+function launchkomorebi{
+    komorebic start --await-configuration
+}
 
 proxyon
 Set-Location D://Joey//repos
