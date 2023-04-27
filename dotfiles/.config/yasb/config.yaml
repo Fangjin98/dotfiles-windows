@@ -96,7 +96,7 @@ bars:
     widgets:
       left:   ["komorebi_workspaces", "komorebi_active_layout", "active_window"]
       center: ["clock"]
-      right:  ["cpu", "memory"] 
+      right:  ["explorer_button","cpu", "memory"] 
 
 widgets:
 
