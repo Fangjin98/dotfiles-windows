@@ -123,5 +123,5 @@ function launchkomorebi{
 }
 
 proxyon
-Set-Location D://Joey//repos
+#Set-Location D://Joey//repos
 Write-Output "Hello, Joey."
