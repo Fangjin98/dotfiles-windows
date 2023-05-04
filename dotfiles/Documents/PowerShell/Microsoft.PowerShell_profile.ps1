@@ -31,6 +31,9 @@ if (-not (Get-Module PSReadline)) {
    $env:STARSHIP_LOG = 'error'
   }
 }
+function Invoke-Starship-PreCommand {
+  $host.ui.Write("`e]0; $env:USERNAME`@ $pwd `a")
+}
 
 $Env:KOMOREBI_CONFIG_HOME = '$HOME\.config\komorebi'
 
